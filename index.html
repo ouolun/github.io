@@ -21,17 +21,15 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
-    h=Today.getHours()
-    function myDate(){
-      document.getElementById(“hn”).innerHTML = h;
-    }
+    var h=Today.getHours()
+    document.getElementById(“h”).textContent=h;
   </script>
   <form>
     <small>請輸入帳號</small>
     <br>
     <input placeholder="竹北高中 G-mail 信箱" 
            required>
-    <br><text=h()>hn</text> 
+    <br><text>h</text> 
     <br>
     <small>請輸入密碼</small>
     <br>
