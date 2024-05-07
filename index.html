@@ -1,9 +1,27 @@
-<body>
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="dpjrgR" data-user="bronx0807" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/bronx0807/pen/dpjrgR">
-  簡單的時鐘</a> by 菜鳥工程師肉豬 (<a href="https://codepen.io/bronx0807">@bronx0807</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-</body>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js">
+<html>
+  <head>
+  </head>  
+  <body onload="startTime()">
+    簡單的時鐘
+    <div id="clock"></div>
+  </body>
+</html>
+<script>
+  function startTime(){
+  var today = new Date();
+  var hh = today.getHours();
+  var mm = today.getMinutes();
+  var ss = today.getSeconds();
+  mm = checkTime(mm);
+  ss = checkTime(ss);
+  document.getElementById('clock').innerHTML = hh + ":" + mm + ":" + ss;
+  var timeoutId = setTimeout(startTime, 500);
+}
+
+function checkTime(i){
+  if(i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
 </script>
